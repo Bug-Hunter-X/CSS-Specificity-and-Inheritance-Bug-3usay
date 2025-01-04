@@ -1,0 +1,25 @@
+The following CSS code snippet demonstrates an issue related to specificity and inheritance:
+
+```css
+div {
+  color: blue;
+}
+
+.red {
+  color: red;
+}
+
+p {
+  color: green;
+}
+
+.red p {
+  color: yellow; 
+}
+
+.red div p {
+  color: purple;
+}
+```
+
+The expected behavior might be that the `<p>` inside `.red` would be yellow, but the `<p>` inside `.red div` would be purple due to the higher specificity of `.red div p`. However, the actual outcome might differ in some browsers due to inheritance and specificity intricacies.  The order in which styles are declared in the CSS file or the cascade order can also unexpectedly influence the outcome.
