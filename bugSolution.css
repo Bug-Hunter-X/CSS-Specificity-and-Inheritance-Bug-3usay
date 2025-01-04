@@ -1,0 +1,25 @@
+The solution involves carefully restructuring selectors to correctly address specificity issues.  One approach would be to be more explicit about the style hierarchy:
+
+```css
+div {
+  color: blue;
+}
+
+.red {
+  color: red;
+}
+
+p {
+  color: green;
+}
+
+.red p {
+  color: yellow; 
+}
+
+.red div p {
+  color: purple !important;
+}
+```
+
+Using `!important` is generally discouraged for maintainability but can be helpful here to explicitly override cascading issues. Alternatively, restructure selectors and properties to ensure the correct specificity applies in the CSS cascade.
